@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for Azzahra ♡</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 25px 15px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #faf6f3;
+      color: #55464a;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 390px;
+      padding: 32px 24px;
+      background: #fffdfc;
+      border: 1px solid #eee3e0;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 12px 35px #5e45440c;
+    }
+
+    .heart {
+      color: #cc91a1;
+      font-size: 27px;
+      margin: 12px 0;
+    }
+
+    .label {
+      color: #a68c89;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 400;
+      margin: 18px 0 12px;
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 400;
+      margin: 15px 0;
+    }
+
+    p {
+      font-size: 13px;
+      color: #8f7c77;
+      line-height: 1.9;
+    }
+
+    .divider {
+      height: 1px;
+      background: #eee5e1;
+      margin: 25px 0;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 7px;
+      margin: 18px 0;
+    }
+
+    .time-box {
+      padding: 12px 2px;
+      border-radius: 10px;
+      background: #f8efee;
+    }
+
+    .number {
+      font-size: 20px;
+      color: #85616d;
+    }
+
+    .unit {
+      font-size: 9px;
+      color: #a48a8b;
+      margin-top: 5px;
+    }
+
+    button {
+      padding: 12px 19px;
+      border: none;
+      border-radius: 25px;
+      background: #d5a0ad;
+      color: white;
+      cursor: pointer;
+      font-size: 12px;
+      transition: 0.25s;
+      margin: 5px 3px;
+    }
+
+    button:hover {
+      background: #c48b9c;
+      transform: translateY(-2px);
+    }
+
+    button:focus-visible {
+      outline: 2px solid #85616d;
+      outline-offset: 3px;
+    }
+
+    .secondary {
+      background: #f3e7e7;
+      color: #85616d;
+    }
+
+    .secondary:hover {
+      background: #ead8dc;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .surprise {
+      margin-top: 20px;
+      padding: 18px 12px;
+      background: #fcf6f5;
+      border-radius: 14px;
+      animation: appear 0.5s ease;
+    }
+
+    .surprise p {
+      color: #78645f;
+    }
+
+    .choice {
+      display: block;
+      width: 100%;
+      margin: 9px 0;
+      background: #f3e7e7;
+      color: #785b64;
+    }
+
+    .choice:hover {
+      background: #ead8dc;
+    }
+
+    .footer {
+      margin-top: 27px;
+      color: #b29a96;
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -30px;
+      color: #d69aaa;
+      pointer-events: none;
+      animation: floatUp 2.5s ease-out forwards;
+      z-index: 5;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatUp {
+      0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg);
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-85vh) rotate(25deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="card">
+
+    <div class="heart">♡</div>
+
+    <div class="label">A LITTLE WEBSITE FOR</div>
+
+    <h1>Azzahra.</h1>
+
+    <p>
+      my favorite person,<br>
+      since September 15, 2022.
+    </p>
+
+    <div class="divider"></div>
+
+    <div class="label">OUR LITTLE COUNTDOWN</div>
+
+    <h2 id="years">4 years ♡</h2>
+
+    <p id="duration">
+      and still choosing you, every day.
+    </p>
+
+    <div class="countdown">
+      <div class="time-box">
+        <div class="number" id="days">000</div>
+        <div class="unit">DAYS</div>
+      </div>
+      <div class="time-box">
+        <div class="number" id="hours">00</div>
+        <div class="unit">HOURS</div>
+      </div>
+      <div class="time-box">
+        <div class="number" id="minutes">00</div>
+        <div class="unit">MINUTES</div>
+      </div>
+      <div class="time-box">
+        <div class="number" id="seconds">00</div>
+        <div class="unit">SECONDS</div>
+      </div>
+    </div>
+
+    <p id="anniversaryDate">September 15, 2027 ♡</p>
+
+    <div class="divider"></div>
+
+    <div class="label">JUST FOR YOU</div>
+
+    <h2>a tiny surprise 🧸</h2>
+
+    <p>
+      there's something I want you to know.<br>
+      wanna see?
+    </p>
+
+    <button onclick="openSurprise()">
+      open your surprise ♡
+    </button>
+
+    <div id="surprise" class="surprise hidden">
+      <div class="heart">♡</div>
+
+      <h2>hey, Azzahra.</h2>
+
+      <p>
+        out of all the little things in life,<br>
+        meeting you is one of my favorites.
+      </p>
+
+      <p>
+        makasih ya, for being here.<br>
+        You make my ordinary days feel special,<br>
+        just by being you.
+      </p>
+
+      <p>
+        I may not say it all the time,<br>
+        but I'm really happy it's you. 🤍
+      </p>
+
+      <button onclick="showHearts()">
+        one more thing... ♡
+      </button>
+
+      <div id="question" class="hidden">
+        <div class="divider"></div>
+
+        <h2>one little question...</h2>
+
+        <p>will you keep making memories with me?</p>
+
+        <button class="choice"
+          onclick="answer('Of course! ♡')">
+          of course ♡
+        </button>
+
+        <button class="choice"
+          onclick="answer('Always, silly 🤍')">
+          always, silly 🤍
+        </button>
+
+        <p id="answer" class="hidden"></p>
+      </div>
+    </div>
+
+    <div class="footer">
+      MADE WITH LOVE, JUST FOR YOU.
+    </div>
+
+  </main>
+
+  <script>
+    function updateCountdown() {
+      const now = new Date();
+
+      let year = now.getFullYear();
+
+      let nextDate = new Date(year, 8, 15);
+
+      if (now >= nextDate) {
+        year++;
+        nextDate = new Date(year, 8, 15);
+      }
+
+      const diff = nextDate - now;
+
+      document.getElementById("days").textContent =
+        String(Math.floor(diff / 86400000)).padStart(3, "0");
+
+      document.getElementById("hours").textContent =
+        String(Math.floor(diff / 3600000) % 24).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(Math.floor(diff / 60000) % 60).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(Math.floor(diff / 1000) % 60).padStart(2, "0");
+
+      document.getElementById("anniversaryDate").textContent =
+        nextDate.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        }) + " ♡";
+
+      let years = now.getFullYear() - 2022;
+
+      const thisYearAnniversary = new Date(
+        now.getFullYear(), 8, 15
+      );
+
+      if (now < thisYearAnniversary) {
+        years--;
+      }
+
+      document.getElementById("years").textContent =
+        years + (years === 1 ? " year ♡" : " years ♡");
+
+      const lastAnniversary = new Date(
+        now.getFullYear() - (now < thisYearAnniversary ? 1 : 0),
+        8, 15
+      );
+
+      let months = now.getMonth() -
+        lastAnniversary.getMonth();
+
+      let days = now.getDate() -
+        lastAnniversary.getDate();
+
+      if (days < 0) {
+        months--;
+        days += new Date(
+          now.getFullYear(), now.getMonth(), 0
+        ).getDate();
+      }
+
+      if (months < 0) {
+        months += 12;
+      }
+
+      document.getElementById("duration").textContent =
+        months + " months, " + days +
+        " days into another year together.";
+    }
+
+    function openSurprise() {
+      const surprise = document.getElementById("surprise");
+
+      surprise.classList.toggle("hidden");
+
+      if (!surprise.classList.contains("hidden")) {
+        showHearts();
+      }
+    }
+
+    function showHearts() {
+      const question = document.getElementById("question");
+
+      question.classList.remove("hidden");
+
+      for (let i = 0; i < 12; i++) {
+        const heart = document.createElement("div");
+
+        heart.className = "floating-heart";
+        heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+        heart.style.left = Math.random() * 95 + "vw";
+        heart.style.fontSize = (14 + Math.random() * 16) + "px";
+        heart.style.animationDelay = (Math.random() * 0.8) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 3500);
+      }
+    }
+
+    function answer(message) {
+      const answerText = document.getElementById("answer");
+
+      answerText.textContent =
+        message + " okay, it's a promise then. ♡";
+
+      answerText.classList.remove("hidden");
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
